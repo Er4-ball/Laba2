@@ -5,3 +5,8 @@ const grades = [
     { name: "Даша", score: 88 },
     { name: "Студент_X", score: 45 }
 ];
+
+
+function findTopStudent(data) {
+    return data.reduce((top, student) => student.score > top.score ? student : top, data[0]).name;
+}
