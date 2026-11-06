@@ -5,3 +5,12 @@ const grades = [
     { name: "Даша", score: 88 },
     { name: "Студент_X", score: 45 }
 ];
+
+function findTopStudent(data) {
+    return data.reduce((top, student) => student.score > top.score ? student : top, data[0]).name;
+}
+
+function calculateAverage(data) {
+    const total = data.reduce((sum, student) => sum + student.score, 0);
+    return total / data.length;
+}
