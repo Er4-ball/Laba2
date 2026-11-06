@@ -5,3 +5,9 @@ const grades = [
     { name: "Даша", score: 88 },
     { name: "Студент_X", score: 45 }
 ];
+
+
+function calculateAverage(data) {
+    const total = data.reduce((sum, student) => sum + student.score, 0);
+    return total / data.length;
+}
