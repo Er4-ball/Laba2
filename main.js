@@ -14,3 +14,7 @@ function calculateAverage(data) {
     const total = data.reduce((sum, student) => sum + student.score, 0);
     return total / data.length;
 }
+
+function filterFailed(data, passScore) {
+    return data.filter(student => student.score < passScore).map(student => student.name);
+}
