@@ -6,10 +6,6 @@ const grades = [
     { name: "Студент_X", score: 45 }
 ];
 
-function findTopStudent(data) {
-    return data.reduce((top, student) => student.score > top.score ? student : top, data[0]).name;
-}
-
 function calculateAverage(data) {
     const total = data.reduce((sum, student) => sum + student.score, 0);
     return total / data.length;
@@ -27,6 +23,11 @@ function addLetterGrade(data) {
         return { ...student, letter };
     });
 }
+
+function findTopStudent(data) {
+    return data.reduce((top, student) => student.score > top.score ? student : top, data[0]).name;
+}
+
 
 console.log("1. Средний балл группы:", calculateAverage(grades));
 console.log("2. Лучший студент:", findTopStudent(grades));
